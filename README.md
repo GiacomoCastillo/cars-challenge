@@ -138,10 +138,14 @@ This project is a **Car Management API** built with **NestJS**. It allows users 
     Example:
     ```graphql
     query {
-      cars(page: 1, limit: 10) {
+       cars(page: 2, limit: 55) {
         cars {
-          _id
+          makeId
           makeName
+          vehicleTypes{
+            typeId
+            typeName
+          }
         }
         total
       }
