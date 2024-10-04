@@ -89,6 +89,19 @@ This project is a **Car Management API** built with **NestJS**. It allows users 
 - **Express** - Middleware for XML parsing.
 - **Axios** - Used to fetch car data from an external API.
 
+## Why MongoDB?
+I chose **MongoDB** over a traditional relational database for several reasons:
+
+1. **Schema Flexibility**: MongoDB is a NoSQL database, which means it allows for a flexible schema. This is particularly useful for storing car records, where different car models might have different attributes. If I need to add new fields or modify existing ones, I can do so without extensive migrations.
+
+2. **Scalability**: MongoDB is designed to scale out easily. As the number of car records grows, MongoDB can handle increased load without significant changes to the application structure. It can easily distribute data across multiple servers.
+
+3. **Performance**: MongoDB is optimized for read and write performance. The ability to store data in a binary JSON format (BSON) allows for fast data retrieval, which is essential for applications needing quick responses, such as this API.
+
+4. **Ease of Use**: MongoDB's document-oriented storage model is intuitive and allows for easy querying and indexing. This makes it simpler to work with complex data structures and provides a more natural way to interact with the data.
+
+5. **Community and Ecosystem**: MongoDB has a large community and a rich ecosystem of tools and libraries, making it easier to find resources and support during development.
+
 ## Installation
 
 1. Clone the repository:
@@ -123,6 +136,7 @@ This project is a **Car Management API** built with **NestJS**. It allows users 
 ## API Endpoints
 
 ### GraphQL
+The API uses GraphQL to perform queries and mutations. You can interact with the API through the GraphQL Playground interface at `http://localhost:3000/graphql`.
 
 #### Queries
 - `hello`: Returns a simple greeting.
