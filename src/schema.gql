@@ -1,0 +1,40 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type VehicleType {
+  typeId: String!
+  typeName: String!
+}
+
+type CreateCarDto {
+  makeId: ID!
+  makeName: String!
+  vehicleTypes: [VehicleType!]!
+}
+
+type CarPaginationDto {
+  cars: [CreateCarDto!]!
+  total: Float!
+}
+
+type Query {
+  hello: String!
+  cars(page: Float, limit: Float): CarPaginationDto!
+}
+
+type Mutation {
+  createCar(input: CarInput!): CreateCarDto!
+  fetchAndStoreCars: Boolean!
+}
+
+input CarInput {
+  makeId: String!
+  makeName: String!
+  vehicleTypes: [VehicleTypeInput!]!
+}
+
+input VehicleTypeInput {
+  typeId: String!
+  typeName: String!
+}
